@@ -1,0 +1,27 @@
+<mat-toolbar>
+  Quadro de Avisos
+</mat-toolbar>
+
+<mat-card *ngFor="let warning of warnings" class="cardPadding">
+    <mat-card-title>
+      <div fxLayout="row">
+          <div fxFlex>{{ warning.title }}</div>
+          <div fxLayoutAlign="end">
+            <button mat-icon-button (click)="visualize(warning.id)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button (click)="edit(warning.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="delete(warning.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+           </div>
+      </div>
+    </mat-card-title>
+  </mat-card>
+<div fxLayoutAlign="end">
+  <button mat-raised-button (click)="register()">
+    Adicionar Aviso
+  </button>
+</div>

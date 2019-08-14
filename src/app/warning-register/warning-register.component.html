@@ -1,0 +1,47 @@
+
+<ng-container *ngIf="!isEdit === true ; else edit">
+  <mat-toolbar>
+      Cadastro de Aviso
+  </mat-toolbar>
+</ng-container>
+<ng-template #edit>
+  <mat-toolbar>
+      Editar Aviso
+  </mat-toolbar>
+</ng-template>
+
+
+
+
+<mat-card>
+  <mat-card-content>
+    <form class="warning-form-register" (ngSubmit)="onSubmit()">
+    <div fxLayout="column">
+    <div>
+      <mat-form-field class="warning-full-width">
+        <input type="text" id="title" required matInput name="title" [(ngModel)]="warning.title" placeholder="Título" >
+        <mat-hint>Título do Aviso</mat-hint>
+      </mat-form-field> <br/>
+    </div>
+    <div>
+      <mat-form-field class="warning-full-width">
+          <textarea type="text" id="description" name="description" required matInput [(ngModel)]="warning.description" placeholder="Descrição"></textarea>
+          <mat-hint>Descrição do Aviso</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+        <button type="submit" mat-raised-button>
+          Salvar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+<div fxLayout="row">
+  <div fxFlex fxLayoutAlign="start">
+    <button mat-raised-button (click)="return()">
+        Voltar
+    </button>
+  </div>
+</div>

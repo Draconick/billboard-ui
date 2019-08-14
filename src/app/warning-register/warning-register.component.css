@@ -1,0 +1,13 @@
+.warning-form-register {
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.warning-full-width {
+  width: 100%;
+}
+
+button{
+  margin-top: 10px;
+}

@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>
+      <div fxLayout="row">
+        <div fxFlex> {{ warning.title }} </div>
+        <div fxLayoutAlign="end">
+            <button mat-icon-button (click)="return()">
+              <mat-icon>keyboard_return</mat-icon>
+            </button>
+        </div>
+      </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div fxLayout="row">
+      <div fxFlex="80">
+        <label for="description">Descrição</label>
+        <p id="description" name="description"> {{ warning.description }}</p>
+      </div>
+      <div fxFlex>
+        <label for="created">Data de Criação</label>
+        <p id="created" name="created">{{ warning.created | date:"dd/MM/yyyy HH:m" }}</p>
+      </div>
+      <div fxFlex>
+        <label for="latestPreview">
+          Ultima Visualização
+        </label>
+        <p id="latestPreview" >{{ warning.latestPreview | date:"dd/MM/yyyy HH:m"}}</p>
+      </div>
+    </div>
+    </mat-card-content>
+</mat-card>
